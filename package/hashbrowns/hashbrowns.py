@@ -238,28 +238,8 @@ class obfuscate():
       Fout.truncate(0)
       Fout.write(newLine)
 
-  def mash(fileA, fileB):
-    with open(fileA, "r+") as Fin:
-      for line in Fin:
-        lineListA = list(line)
-        for i in lineListA:
-          random.shuffle(lineListA)
-      Fin.truncate(0)
-      Fin.close()
-    with open(fileB, "r+") as Fin:
-      for line in Fin:
-        lineListB = list(line)
-        for i in lineListB:
-          random.shuffle(lineListB)
-      Fin.truncate(0)
-      Fin.close()
-    
-    for i in range(random.randint(100, 400)):
-      foo = lineListA + lineListB
-      random.shuffle(foo)
-    with open(fileA, "w") as Fout:
-      Fout.write(''.join(foo))
-      Fout.close()
+  def mash(file):
+    # Appends NULL character to the given file then shuffles it around
     
 
-obfuscate.mash("test.txt", "notes.txt")
+obfuscate.mash("test.txt")
