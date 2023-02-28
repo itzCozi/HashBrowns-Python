@@ -1,9 +1,11 @@
 try:
   import random
   import os
+  import sys
   import time
   import hashlib
   import string
+  from sys import platform
 except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
@@ -18,7 +20,7 @@ def clearconsole():
   return str("")
 
 def wipefile(file):
-  with open(file, w) as Fout:
+  with open(file, "w") as Fout:
     Fout.truncate(0)
     Fout.close()
   return str("")
