@@ -8,16 +8,24 @@ except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
 
-# Global variables
-class errorMessages():
-  error = str("ERROR: An unknown error has occured.")
-  fileUnreadable = str("ERROR: The file given cannot be read.")
-  fileEmpty = str("ERROR: The given file is empty and contains no data.")
-  insufficientPerm = str("ERROR: The file cannot be accessed due to insufficient permissions.")
-  fileExists = str("ERROR: The file does not exist/the path can't be found.")
-  fileOpen = str("ERROR: The file cannot be opened due to it being in use by another process.")
+
+# Functions
+def clearconsole():
+  if platform == "linux" or platform == "linux2":
+    os.system("clear")
+  else:
+    os.system("cls")
+  return str("")
+
+def wipefile(file):
+  with open(file, w) as Fout:
+    Fout.truncate(0)
+    Fout.close()
+  return str("")
 
 
+
+# Classes
 class hash():
   def hash(target, print=None):
     sha256 = hashlib.sha256()
