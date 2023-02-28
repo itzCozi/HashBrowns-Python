@@ -238,9 +238,3 @@ class obfuscate():
       Fout.truncate(0)
       Fout.write(newLine)
 
-  def mash(file):
-    # Appends NULL character to the given file then shuffles it around
-    # https://www.quora.com/How-can-I-use-the-null-terminated-characters-in-a-Python-string
-    
-
-obfuscate.mash("test.txt")
