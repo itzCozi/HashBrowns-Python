@@ -19,6 +19,20 @@ def clearconsole():
     os.system("cls")
   return str("")
 
+def mutilate(file):
+  with open(file, "r+") as Fout:
+    for line in Fout:
+      lineList = list(line)
+      randoms = list(string.printable)
+        
+    for i in lineList:
+      newList = lineList + randoms
+      random.shuffle(newList)
+ 
+    newLine = ''.join(random.choice(newList) for i in range(len(lineList)))
+    Fout.truncate(0)
+    Fout.write(newLine)
+
 def wipefile(file):
   with open(file, "w") as Fout:
     Fout.truncate(0)
@@ -232,19 +246,4 @@ class decryption():
       Fout.write(doubled)
       Fout.close()
 
-
-class obfuscate():
-  def mutilate(file):
-    with open(file, "r+") as Fout:
-      for line in Fout:
-        lineList = list(line)
-        randoms = list(string.printable)
-        
-        for i in lineList:
-          newList = lineList + randoms
-          random.shuffle(newList)
-          
-      newLine = ''.join(random.choice(newList) for i in range(len(lineList)))
-      Fout.truncate(0)
-      Fout.write(newLine)
 
