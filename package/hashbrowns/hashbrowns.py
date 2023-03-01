@@ -10,7 +10,6 @@ except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
 
-
 # Functions
 def clearconsole():
   if platform == "linux" or platform == "linux2":
@@ -38,7 +37,6 @@ def wipefile(file):
     Fout.truncate(0)
     Fout.close()
   return str("")
-
 
 
 # Classes
