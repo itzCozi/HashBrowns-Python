@@ -19,6 +19,16 @@ def clearconsole():
     os.system("cls")
   return str("")
 
+def checkfile(file, print=None):
+  # Test this in replit when home
+  if os.is_file() == True:
+    with open(file, "r") as File:
+      lines = File.readlines()
+      size = os.getsize(file)
+      lastedited = os.path.getmtime(path)
+      linenum = len(lines)
+      creationTime = os.path.getctime(file)
+
 def mutilate(file):
   with open(file, "r+") as Fout:
     for line in Fout:
