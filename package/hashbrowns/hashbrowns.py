@@ -32,6 +32,12 @@ def mutilate(file):
     Fout.truncate(0)
     Fout.write(newLine)
 
+def getinfo():
+  username = os.getlogin()
+  os = sys.platform
+  time = time.now
+  encoding = sys.getfilesystemencoding()
+
 def wipefile(file):
   with open(file, "w") as Fout:
     Fout.truncate(0)

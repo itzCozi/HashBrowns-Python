@@ -7,3 +7,5 @@
 - [ ] Make functions wiki page 
 - [ ] Find cool picture for repo banner
 - [ ] Detail README.md when version 1 done
+- [ ] Add filestatus() function to check the given file's info.
+- [ ] Add disclamer in code and functions about misuse sysinfo().
