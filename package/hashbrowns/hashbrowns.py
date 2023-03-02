@@ -2,8 +2,9 @@ try:
   import random
   import os
   import sys
-  import hashlib
   import string
+  import hashlib
+  import platform
   import time, datetime
   from sys import platform
   from datetime import datetime
@@ -55,11 +56,9 @@ class functions:
     OS = ("Operating-System: ", sys.platform)
     currentTime = ("Time: ", datetime.now().time())
     currentDate = ("Date: ", datetime.now().date())
-    sysUname = ("System-Information: ", os.uname())
     currentProccess = ("Current-Process: ", os.getpid())
     encoding = ("Encoding: ", sys.getfilesystemencoding())
-
-    returnList = (OS, currentDate, currentTime, currentProccess, encoding, sysUname)
+    returnList = (OS, currentDate, currentTime, currentProccess, encoding)
     return returnList
   
   def wipefile(file):

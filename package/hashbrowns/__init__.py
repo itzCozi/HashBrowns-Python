@@ -1,1 +1,1 @@
-from .hashbrowns import functions, hash, key, encryption, decryption
+from hashbrowns import functions, hash, key, encryption, decryption
