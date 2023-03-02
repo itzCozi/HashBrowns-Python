@@ -6,8 +6,6 @@ try:
   import hashlib
   import platform
   import time, datetime
-  from sys import platform
-  from datetime import datetime
 except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
@@ -36,6 +34,16 @@ class functions:
         print(returnList)
       else:
         return returnList
+
+  def validatekey(key, relay=None):
+    lowerAlphabet = list(string.ascii_lowercase)
+    higherAlphabet = list(string.ascii_uppercase)
+    allNumbers = list(string.digits)
+    keyList = list(key)
+
+    for i in keyList:
+      # Check if i is equal to a digit, lowercase letter or uppercase letter
+    # Checks if a key meets conditions if it does append it to a list of vaildatedKeys and return that list if relay!=None
 
   def mutilate(file):
     with open(file, "r+") as Fout:
