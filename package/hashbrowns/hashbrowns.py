@@ -35,16 +35,6 @@ class functions:
       else:
         return returnList
 
-  def validatekey(key, relay=None):
-    lowerAlphabet = list(string.ascii_lowercase)
-    higherAlphabet = list(string.ascii_uppercase)
-    allNumbers = list(string.digits)
-    keyList = list(key)
-
-    for i in keyList:
-      # Check if i is equal to a digit, lowercase letter or uppercase letter
-    # Checks if a key meets conditions if it does append it to a list of vaildatedKeys and return that list if relay!=None
-
   def mutilate(file):
     with open(file, "r+") as Fout:
       for line in Fout:
@@ -211,6 +201,38 @@ class key():
     returnKey = ''.join(random.choice(foo) for i in range(keyLength))
 
     return returnKey
+  
+  def validatekey(key, print=None):
+    lowerAlphabet = list(string.ascii_lowercase)
+    higherAlphabet = list(string.ascii_uppercase)
+    allNumbers = list(string.digits)
+    keyList = list(key)
+    returnItem = list()
+    lowercount = 0
+    uppercount = 0
+    digitcount = 0
+
+    for i in keyList:
+      if i in lowerAlphabet:
+        lowercount += 1
+      if i in higherAlphabet:
+        uppercount += 1
+      if i in allNumbers:
+        digitcount += 1
+    
+    if int(uppercount + lowercount + digitcount) >= 40:
+      returnItem.append("Strong Key")
+    elif int(uppercount + lowercount + digitcount) >= 30:
+      returnItem.append("Medium Key")
+    elif int(uppercount + lowercount + digitcount) >= 20:
+      returnItem.append("Weak Key")
+    else:
+      returnItem.append("Unsafe Key!")
+    
+    if print != None:
+      print(returnItem)
+    else:
+      return returnItem
 
 
 class encryption():

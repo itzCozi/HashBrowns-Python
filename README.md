@@ -1,6 +1,6 @@
 # HashBrowns-Python
 
-![Banner](ignore/banner.png)
+![Banner](.github/banner.png)
 
 HashBrowns is a secure package for hashing and cryptography in Python with unique features. This package is mainly for cryptography and hashing, but it also has some other features for files and handling. All functions are listed in a section below and are explained in detail here [wiki](https://github.com/itzCozi/HashBrowns-Python/wiki/Functions) also this package being open source, you can view the source code here [source](https://github.com/itzCozi/HashBrowns-Python/tree/main/package).
 
