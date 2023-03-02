@@ -20,14 +20,20 @@ def clearconsole():
   return str("")
 
 def checkfile(file, print=None):
-  # Test this in replit when home
-  if os.is_file() == True:
+  if os.path.isfile(file) == False:
+    returnList = ("File not found", "Or is not a file")
+  if os.path.isfile(file) == True:
     with open(file, "r") as File:
       lines = File.readlines()
-      size = os.getsize(file)
-      lastedited = os.path.getmtime(path)
-      linenum = len(lines)
-      creationTime = os.path.getctime(file)
+      size = ("Size:", os.path.getsize(file))
+      lastedited = ("Last-Opened:", os.path.getmtime(file))
+      linenum = ("Line-Number:", len(lines))
+      creationTime = ("Created:", os.path.getctime(file))
+      returnList = (size, lastedited, linenum, creationTime)
+    if print!=None:
+      print(returnList)
+    else:
+      return returnList
 
 def mutilate(file):
   with open(file, "r+") as Fout:
@@ -44,6 +50,7 @@ def mutilate(file):
     Fout.write(newLine)
 
 def getinfo():
+  # DISCLAMER: This is not for malicious use, this is for development only.
   OS = ("Operating-System: ", sys.platform)
   currentTime = ("Time: ", datetime.now().time())
   currentDate = ("Date: ", datetime.now().date())
