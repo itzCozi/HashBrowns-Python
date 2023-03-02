@@ -19,6 +19,21 @@ hash.hashfile()              key.solokey()
 hash.comparehash()           key.secure()
 ```
 
+## Usage
+This section is a simple demonstration/guide on hashbrowns, a more in depth one can be found [here](https://github.com/itzCozi/HashBrowns-Python/wiki/Quickstart-Guide) on the wiki.
+
+**All Functions**
+To import all functions from hashbrows you can either do the quicker but less reliable way of star imports this option may not work on all systems and also is considered "bad practice".
+```python
+from hashbrowns import *
+```
+
+**Certain Functions
+To import only certain functions you can use the longer method of finding all the classes or copy and pasting the given full import from the [wiki](https://github.com/itzCozi/HashBrowns-Python/wiki/Functions).
+```python
+from hashbrowns import functions, hash, key, encryption, decryption
+```
+
 ### Examples
 
 Hashing a password and saving it to a database.
