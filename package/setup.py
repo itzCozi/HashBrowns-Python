@@ -1,7 +1,7 @@
 # https://www.freecodecamp.org/news/build-your-first-python-package/
 from setuptools import setup, find_packages
 
-VERSION = '1.1' 
+VERSION = '1.2' 
 DESCRIPTION = 'A package for cryptography in python with unique functions'
 LONG_DESCRIPTION = '''
 A python package for cryptography and data mixing from strings/files more on github.
