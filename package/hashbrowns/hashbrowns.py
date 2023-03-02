@@ -2,73 +2,73 @@ try:
   import random
   import os
   import sys
-  import time
   import hashlib
   import string
+  import time, datetime
   from sys import platform
   from datetime import datetime
 except ImportError:
   print("Error: Missing module(s) please install the following module(s): random, time, hashlib, string")
 
 
-# Functions
-def clearconsole():
-  if platform == "linux" or platform == "linux2":
-    os.system("clear")
-  else:
-    os.system("cls")
-  return str("")
-
-def checkfile(file, print=None):
-  if os.path.isfile(file) == False:
-    returnList = ("File not found", "Or is not a file")
-  if os.path.isfile(file) == True:
-    with open(file, "r") as File:
-      lines = File.readlines()
-      size = ("Size:", os.path.getsize(file))
-      lastedited = ("Last-Opened:", os.path.getmtime(file))
-      linenum = ("Line-Number:", len(lines))
-      creationTime = ("Created:", os.path.getctime(file))
-      returnList = (size, lastedited, linenum, creationTime)
-    if print!=None:
-      print(returnList)
-    else:
-      return returnList
-
-def mutilate(file):
-  with open(file, "r+") as Fout:
-    for line in Fout:
-      lineList = list(line)
-      randoms = list(string.printable)
-        
-    for i in lineList:
-      newList = lineList + randoms
-      random.shuffle(newList)
- 
-    newLine = ''.join(random.choice(newList) for i in range(len(lineList)))
-    Fout.truncate(0)
-    Fout.write(newLine)
-
-def getinfo():
-  # DISCLAMER: This is not for malicious use, this is for development only.
-  OS = ("Operating-System: ", sys.platform)
-  currentTime = ("Time: ", datetime.now().time())
-  currentDate = ("Date: ", datetime.now().date())
-  sysUname = ("System-Information: ", os.uname())
-  currentProccess = ("Current-Process: ", os.getpid())
-  encoding = ("Encoding: ", sys.getfilesystemencoding())
-
-  returnList = (OS, currentDate, currentTime, currentProccess, encoding, sysUname)
-  return returnList
-  
-def wipefile(file):
-  with open(file, "w") as Fout:
-    Fout.truncate(0)
-    Fout.close()
-  return str("")
-
-
 # Classes
+class functions:
+  def clearconsole():
+    if platform == "linux" or platform == "linux2":
+      os.system("clear")
+    else:
+      os.system("cls")
+    return str("")
+
+  def checkfile(file, print=None):
+    if os.path.isfile(file) == False:
+      returnList = ("File not found", "Or is not a file")
+    if os.path.isfile(file) == True:
+      with open(file, "r") as File:
+        lines = File.readlines()
+        size = ("Size:", os.path.getsize(file))
+        lastedited = ("Last-Opened:", os.path.getmtime(file))
+        linenum = ("Line-Number:", len(lines))
+        creationTime = ("Created:", os.path.getctime(file))
+        returnList = (size, lastedited, linenum, creationTime)
+      if print!=None:
+        print(returnList)
+      else:
+        return returnList
+
+  def mutilate(file):
+    with open(file, "r+") as Fout:
+      for line in Fout:
+        lineList = list(line)
+        randoms = list(string.printable)
+        
+      for i in lineList:
+        newList = lineList + randoms
+        random.shuffle(newList)
+ 
+      newLine = ''.join(random.choice(newList) for i in range(len(lineList)))
+      Fout.truncate(0)
+      Fout.write(newLine)
+
+  def getinfo():
+    # DISCLAMER: This is not for malicious use, this is for development only.
+    OS = ("Operating-System: ", sys.platform)
+    currentTime = ("Time: ", datetime.now().time())
+    currentDate = ("Date: ", datetime.now().date())
+    sysUname = ("System-Information: ", os.uname())
+    currentProccess = ("Current-Process: ", os.getpid())
+    encoding = ("Encoding: ", sys.getfilesystemencoding())
+
+    returnList = (OS, currentDate, currentTime, currentProccess, encoding, sysUname)
+    return returnList
+  
+  def wipefile(file):
+    with open(file, "w") as Fout:
+      Fout.truncate(0)
+      Fout.close()
+    return str("")
+
+
 class hash():
   def hash(target, print=None):
     sha256 = hashlib.sha256()
