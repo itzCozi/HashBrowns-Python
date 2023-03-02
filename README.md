@@ -5,7 +5,7 @@
 HashBrowns is a secure package for hashing and cryptography in Python with unique features. This package is mainly for cryptography and hashing, but it also has some other features for files and handling. All functions are listed in a section below and are explained in detail here [wiki](https://github.com/itzCozi/HashBrowns-Python/wiki/Functions) also this package being open source, you can view the source code here [source](https://github.com/itzCozi/HashBrowns-Python/tree/main/package).
 
 ## All Functions
-All functions are listed here, and are explained in detail in the [wiki](https://github.com/itzCozi/HashBrowns-Python/wiki/Functions).
+Most functions are listed here, and are explained in detail in the [wiki](https://github.com/itzCozi/HashBrowns-Python/wiki/Functions).
 
 ```
 functions.clearconsole()     encryption.standard()
@@ -13,7 +13,8 @@ functions.checkfile()        encryption.double()
 functions.mutilate()
 functions.getinfo()          decryption.standard()
 functions.wipefile()         decryption.double()
-
+functions.keyword()
+                             key.validatekey()
 hash.hash()                  key.keypair()
 hash.hashfile()              key.solokey()
 hash.comparehash()           key.secure()
